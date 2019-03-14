@@ -1,30 +1,29 @@
 var mongoose = require('mongoose');
 
 var batchSchema = mongoose.Schema({
-  FN {
+  FN :{
     type: String,
     unique: true
+    },
+  LN:{
+    type: String
   },
-								 
-	LN {
+  P:{
     type: String
-  }
-  P {
+  },
+  CP:{
     type: String
-  }
-  CP {
+  },
+  G1:{
     type: String
-  }
-  G1 {
+  },
+    G2:{
     type: String
-  }
-    G2 {
+  } ,
+  PN:{
     type: String
-  } 
-  PN {
-    type: String
-  } 
-  Ans {
+  } ,
+  Ans:{
     type: String
   }                               
 });
