@@ -46,6 +46,36 @@ router.post('/', function(req, res) {
     	}
   	});
 });
+router.get('/edit/:id',function(req,res,next){
+  var id = req.params.id;
+  var query={_id:id};
+
+    Student1.find(query,
+      function(err, results) {
+        if (err) throw err;
+        console.log(results);
+        res.render('updateemployee',{info:results});
+    });
+
+});
+
+
+
+
+router.get('/delete/:id',function(req,res,next){
+	var id = req.params.id;
+  	var query={_id:id};
+
+  	Student1.remove({
+    	_id: id
+  		}, function(err) {
+    	if (err) throw err;
+    	res.redirect('/employee');
+  });
+
+
+  	
+});
 router.get('/new', function(req, res, next) {
   res.render('emp');
 });

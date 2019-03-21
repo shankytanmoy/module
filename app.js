@@ -28,6 +28,13 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var options = {
+  maxAge: '1d',
+};
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/edit', express.static(path.join(__dirname, 'public'), options));
+app.use('/delete', express.static(path.join(__dirname, 'public'), options));
+
 app.use('/', routes);
 app.use('/users', users);
 

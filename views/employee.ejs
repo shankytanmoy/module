@@ -42,6 +42,10 @@
                  <td><%= info[i].G2 %></td>
                  <td><%= info[i].PN %></td>
                  <td><%= info[i].Ans %></td>
+                    <td>
+                    <a class="btn btn-xs btn-warning btn-edit" href="/edit/<%=info[i]._id %>">Edit</a>
+                    <a class="btn btn-xs btn-danger btn-delete" href="/delete/<%=info[i]._id %>">Delete</a>
+                  </td>
             </tr>
         <% } %>
 
